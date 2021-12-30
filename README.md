@@ -100,7 +100,7 @@ project root / 專案根目錄
         - ex: Entity `UserInfo` (one to one)
       - Simple transaction process
         - ex: `PlatformTransactionManager`, `@Transactional`
-    - MongoDB - https://github.com/DemonicKrace/spring-boot-example/springboot-websocket-example
+    - MongoDB - https://github.com/DemonicKrace/spring-boot-example/tree/master/springboot-websocket-example
       - ex: `UserRepository` implement by `MongoRepository`
 - AOP
     - Interceptor
@@ -120,7 +120,7 @@ project root / 專案根目錄
     - Unit-test
       - Login test without starting server
         - ex: `WebMvcTest`, `MockBean`
-- Websocket - https://github.com/DemonicKrace/spring-boot-example/springboot-websocket-example
+- Websocket - https://github.com/DemonicKrace/spring-boot-example/tree/master/springboot-websocket-example
   - communication by `STOMP`
 - Message Queue
     - RocketMQ
@@ -128,7 +128,7 @@ project root / 專案根目錄
             - ex: Produce simple message to Broker
         - Consumer
             - ex: Consume simple message from Broker
-- Security - https://github.com/DemonicKrace/spring-boot-example/spring-boot-security-jwt
+- Security - https://github.com/DemonicKrace/spring-boot-example/tree/master/spring-boot-security-jwt
     - Authentication implement by `spring-boot-starter-security` package
     - RESTful Authentication with JWT
 - Environment
