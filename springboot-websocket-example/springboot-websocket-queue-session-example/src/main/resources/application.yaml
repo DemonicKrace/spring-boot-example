@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: springboot-websocket-queue-session-example
+  thymeleaf:
+    enabled: true
+server:
+  port: 7002

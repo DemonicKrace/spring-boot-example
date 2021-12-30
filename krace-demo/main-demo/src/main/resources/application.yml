@@ -1,0 +1,88 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: main-demo
+
+  # setting with maven dependency 'spring-boot-starter-security' and 'admin-server' project
+  security:
+    user:
+      name: krace
+      password: krace-password
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:8010
+        instance:
+          metadata:
+            # To connect to the client
+            user.name: ${spring.security.user.name}
+            user.password: ${spring.security.user.password}
+        # Credentials to authenticate with the Admin Server
+        username: admin
+        password: admin-password
+
+  main:
+    allow-bean-definition-overriding: true
+
+  config:
+    import: optional:configserver:http://localhost:9911
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/krace_demo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: root
+
+  session:
+    store-type: redis
+    timeout: 3600
+
+  # TODO: wait to implement
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test
+
+  aop:
+    auto: true
+    proxy-target-class: true
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    mode: LEGACYHTML5
+    cache: false
+
+  jackson:
+    serialization:
+      indent_output: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.kracedemo.entity
+  configuration:
+    cache-enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # allow endpoints
+        # 1. actuator/refresh,
+        # 2. admin-server monitor
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+    operations-sorter: method
+
+rocketmq:
+  producer-board-message-url: http://localhost:9966/producer/board/message

@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: springboot-websocket-queue-header-example
+#  mvc:
+#    static-path-pattern: /static/**
+server:
+  port: 7004

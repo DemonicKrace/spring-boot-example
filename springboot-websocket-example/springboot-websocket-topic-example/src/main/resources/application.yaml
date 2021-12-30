@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: springboot-websocket-topic-example
+
+server:
+  port: 7001
